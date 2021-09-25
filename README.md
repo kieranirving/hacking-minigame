@@ -8,4 +8,6 @@ It gets progressively harder as you go along, with a completely random pattern g
 
 Do with it what you will, just quote this repository somewhere visible
 
+Credit for Testing & Debugging help: https://github.com/joruchan
+
 [Demo](https://kieranirving.github.io/hack-minigame/)
