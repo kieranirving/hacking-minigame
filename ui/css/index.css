@@ -1,0 +1,208 @@
+html, body {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hack-wrap {
+    background-color: #393e3f;
+    width: 800px !important;
+    height: 600px !important;
+    position: relative;
+	box-shadow: 0 0 10px 7px rgb(34, 34, 34);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hack-wrap.hide {
+    display:none;
+}
+
+.hack-wrap.fail {
+    pointer-events: none;
+}
+
+.option-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+.options {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(34, 1, 32);
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.option {
+    height: 100%;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.option div {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(74, 2, 77);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.option.noselect div {
+    background-color: rgb(72 2 75 / 24%);
+    pointer-events: none !important;
+}
+
+.option.noselectfail div {
+    background-color: rgb(72 2 75 / 24%) !important;
+    pointer-events: none !important;
+}
+
+.option div.notinpattern {
+    background-color: rgb(72 2 75 / 24%);
+}
+
+.option div.hide {
+    opacity: 0;
+}
+
+.option div.error {
+    background-color: rgba(77, 2, 2, 0.637);
+}
+
+.option div.correct {
+    background-color: rgba(2, 77, 25, 0.637);
+}
+
+.option div:last-of-type {
+    margin-bottom: 0px;
+}
+
+.attempts {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+
+.timer {
+    width: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 18px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: right;
+    line-height: 38px;
+}
+
+.attempts div {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.342);
+    margin: 0px 5px;
+    border-radius: 10px;
+}
+.attempts div.wrong {
+    background-color: #c51111;
+}
+
+.loader, .outcome {
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    z-index: 23602760;
+    position: absolute;
+}
+
+.outcome {
+    background-color: rgba(0, 0, 0, 0.548);
+    border-radius: 10px;
+    pointer-events: all !important;
+}
+
+.loader.hide, .outcome.hide {
+    opacity: 0;
+    pointer-events: none !important;
+}
+
+.outcome > .message {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.outcome > .message.fail {
+    background-color: rgba(77, 2, 2);
+    border: 1px solid rgb(160, 16, 16);
+}
+
+.outcome > .message.success {
+    background-color: rgb(2, 77, 21);
+    border: 1px solid rgb(16, 160, 40);
+}
+  
+  #countdown svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+  }
+  
+  #countdown svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: white;
+    fill: none;
+  }
+
+  svg circle.circle--10s {
+    animation: countdown 10s linear infinite forwards;
+  }
+
+  svg circle.circle--8s {
+    animation: countdown 8s linear infinite forwards;
+  }
+  
+  @keyframes countdown {
+    from {
+      stroke-dashoffset: 0px;
+    }
+    to {
+      stroke-dashoffset: 113px;
+    }
+  }
