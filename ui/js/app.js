@@ -31,7 +31,7 @@ var app = function() {
                 }
             });
         },
-        resetToDefault: function() {
+        resetToDefault: () => {
             hOptions = 4;
             vOptions = 4;
             currentPosition = 0;
